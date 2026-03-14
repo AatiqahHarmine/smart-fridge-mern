@@ -1,0 +1,153 @@
+.page { display: flex; flex-direction: column; gap: 1.2rem; }
+
+.loadState {
+  display: flex; align-items: center; justify-content: center;
+  gap: 12px; height: 60vh;
+  color: var(--text-muted); font-size: 15px;
+}
+
+.pageHeader {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; margin-bottom: 0.4rem;
+}
+.pageTitle { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; color: var(--text); }
+.pageSub { font-size: 12px; color: var(--text-faint); margin-top: 2px; }
+
+.refreshBtn {
+  display: flex; align-items: center; gap: 6px;
+  padding: 7px 14px; border-radius: var(--radius);
+  border: 1.5px solid var(--border-strong);
+  background: var(--surface); color: var(--text-muted);
+  font-size: 13px; font-family: 'Outfit', sans-serif;
+  cursor: pointer; transition: all 0.15s;
+}
+.refreshBtn:hover { border-color: var(--teal); color: var(--teal); }
+
+/* ─── Metric cards ─── */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0,1fr));
+  gap: 10px;
+}
+.metricCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+}
+.metricTop { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.metricIcon { font-size: 20px; }
+.metricStatus { font-size: 13px; font-weight: 600; }
+.statusOk { color: var(--teal); }
+.statusWarn { color: var(--amber); }
+.metricValue { font-size: 22px; font-weight: 700; font-family: 'DM Mono', monospace; color: var(--text); letter-spacing: -0.02em; }
+.metricLabel { font-size: 12px; font-weight: 600; color: var(--text); margin-top: 2px; }
+.metricSub { font-size: 11px; color: var(--text-faint); margin-top: 2px; }
+
+/* ─── Card ─── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+}
+.cardTitle {
+  font-size: 11px; font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+}
+
+/* ─── Grids ─── */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; }
+
+/* ─── Fill bars ─── */
+.barWrap { margin-bottom: 10px; }
+.barMeta { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 4px; }
+.barLabel { color: var(--text-muted); }
+.barPct { font-weight: 500; font-family: 'DM Mono', monospace; }
+.barTrack { height: 7px; background: var(--gray-50); border-radius: 4px; overflow: hidden; }
+.barFill { height: 100%; border-radius: 4px; transition: width 0.6s ease; }
+.overallFill {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 12px; padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.ofLabel { font-size: 12px; color: var(--text-muted); }
+.ofVal { font-size: 20px; font-weight: 600; font-family: 'DM Mono', monospace; color: var(--text); }
+
+/* ─── Sensor rows ─── */
+.sensorRow {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.sensorRow:last-child { border-bottom: none; }
+.sensorLeft { display: flex; align-items: center; gap: 8px; }
+.dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.dotOk { background: var(--teal); }
+.dotWarn { background: var(--amber-mid); }
+.dotOff { background: var(--gray-100); }
+.sensorName { font-size: 13px; color: var(--text); }
+.sensorVal { font-size: 13px; font-family: 'DM Mono', monospace; color: var(--text-muted); }
+.valOk { color: var(--teal); }
+
+/* ─── Chart ─── */
+.chartWrap { position: relative; height: 190px; width: 100%; }
+
+/* ─── Alerts ─── */
+.alertRow {
+  display: flex; gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+}
+.alertRow:last-child { border-bottom: none; }
+.alertDot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+.alertText { font-size: 13px; color: var(--text); line-height: 1.4; }
+.alertMeta { font-size: 11px; color: var(--text-faint); margin-top: 2px; }
+
+/* ─── Food grid ─── */
+.foodGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+}
+.foodCard {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--gray-50); border-radius: var(--radius);
+  padding: 10px 12px;
+}
+.foodEmoji { font-size: 22px; flex-shrink: 0; }
+.foodInfo { flex: 1; min-width: 0; }
+.foodName { font-size: 13px; font-weight: 500; color: var(--text); }
+.foodWeight { font-size: 11px; color: var(--text-faint); margin-top: 1px; }
+.expiryPill {
+  font-size: 11px; font-weight: 600;
+  padding: 3px 9px; border-radius: 12px;
+  white-space: nowrap; flex-shrink: 0;
+}
+
+/* ─── Info rows ─── */
+.infoRow {
+  display: flex; justify-content: space-between;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+.infoRow:last-child { border-bottom: none; }
+.infoKey { color: var(--text-muted); }
+.infoVal { color: var(--text); font-family: 'DM Mono', monospace; font-size: 12px; }
+
+.noData {
+  font-size: 13px; color: var(--text-faint);
+  text-align: center; padding: 2rem 0;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1100px) { .metrics { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px)  { .metrics { grid-template-columns: repeat(2, 1fr); } .grid2, .grid3 { grid-template-columns: 1fr; } }
+@media (max-width: 640px)  { .metrics { grid-template-columns: 1fr 1fr; } }
